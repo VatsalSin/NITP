@@ -9,7 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.saksham.sakshambharat.FeedItem;
+import com.saksham.sakshambharat.FeedRecyclerAdapter;
 import com.saksham.sakshambharat.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +40,10 @@ public class FeedFragment extends Fragment {
         feedRecyclerView.setLayoutManager(linearLayoutManager);
         feedRecyclerView.setHasFixedSize(false);
 
+        List<FeedItem> feedItemList = new ArrayList<FeedItem>();
 
+        FeedRecyclerAdapter feedRecyclerAdapter = new FeedRecyclerAdapter(getContext(), feedItemList);
+        feedRecyclerView.setAdapter(feedRecyclerAdapter);
 
         return rootView;
     }
