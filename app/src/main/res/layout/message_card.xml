@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     tools:text="qwerty" />
 
                 <LinearLayout
@@ -46,12 +46,21 @@
                         android:layout_weight="1"
                         tools:text="Nothing" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="15sp"
+                        android:layout_weight="4"
+                        tools:text="09:00 pm"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="10dp"/>
+
                     <ImageView
                         android:id="@+id/mssg_status"
                         android:layout_width="match_parent"
                         android:layout_height="15sp"
                         android:layout_marginRight="5sp"
-                        android:layout_weight="18"
+                        android:layout_weight="4"
                         android:src="@drawable/atm" />
                 </LinearLayout>
             </LinearLayout>
