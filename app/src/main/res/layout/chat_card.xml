@@ -34,12 +34,12 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="40sp"
                         tools:text="Atreyee Mukherjee"
-                        android:textStyle="bold||italic"
+                        android:textStyle="bold|italic"
                         android:textSize="24sp"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:id="@+id/person_name"
                         android:layout_marginLeft="10sp"
                         android:textColor="#000000"
@@ -47,14 +47,13 @@
 
                         />
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="40sp"
-                        android:layout_weight="8"
                         android:textAlignment="center"
                         android:padding="5sp"
                         android:id="@+id/date"
                         android:textSize="16sp"
-                        tools:text="Date"/>
+                        tools:text="30/12/18"/>
                 </LinearLayout>
                 <TextView
                     android:layout_width="match_parent"
