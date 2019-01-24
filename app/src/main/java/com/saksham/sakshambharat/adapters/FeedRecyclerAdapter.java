@@ -1,4 +1,4 @@
-package com.saksham.sakshambharat;
+package com.saksham.sakshambharat.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.saksham.sakshambharat.R;
+import com.saksham.sakshambharat.model.FeedItem;
 
 import java.util.List;
 

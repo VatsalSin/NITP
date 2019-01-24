@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.saksham.sakshambharat.FeedItem;
-import com.saksham.sakshambharat.FeedRecyclerAdapter;
+import com.saksham.sakshambharat.model.FeedItem;
+import com.saksham.sakshambharat.adapters.FeedRecyclerAdapter;
 import com.saksham.sakshambharat.R;
 
 import java.util.ArrayList;
