@@ -6,6 +6,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="details_intro">Skill India is a campaign launched by Prime Minister Narendra Modi on 15 July 2015 which aims to train over 40 crore people in India in different skills by 2022. It includes various initiatives of the government like "National Skill Development Mission," "National Policy for Skill Development and Entrepreneurship, 2015", "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)" and the "Skill Loan scheme."The Skill India initiative was to ensure that the millions who enter the job market untrained, receive formal skill-building opportunities.
+</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
