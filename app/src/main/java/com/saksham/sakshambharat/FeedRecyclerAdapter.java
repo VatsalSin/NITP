@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -30,22 +31,29 @@ public class FeedRecyclerAdapter extends RecyclerView.Adapter<FeedRecyclerAdapte
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View view = inflater.inflate(R.layout.timetable_item, viewGroup, false);
+        View view = inflater.inflate(R.layout.feed_card, viewGroup, false);
         FeedViewHolder viewHolder = new FeedViewHolder(view);
 
         return viewHolder;
 
     }
 
+    @Override
+    public void onBindViewHolder(@NonNull FeedViewHolder feedViewHolder, int i) {
+        
+    }
+
     public class FeedViewHolder extends RecyclerView.ViewHolder{
 
-        public final TextView timeTextView;
-        public final TextView subjectTextView;
+        public final TextView feedHeader;
+        public final TextView feedContent;
+        public final ImageView feedImage;
 
         public FeedViewHolder(@NonNull View itemView) {
             super(itemView);
-            timeTextView = (TextView) itemView.findViewById(R.id.tt_time_view);
-            subjectTextView = (TextView) itemView.findViewById(R.id.tt_subject_view);
+            feedHeader = (TextView) itemView.findViewById(R.id.feed_header);
+            feedContent = (TextView) itemView.findViewById(R.id.feed_content);
+            feedImage = (ImageView) itemView.findViewById(R.id.feed_image);
         }
 
     }
