@@ -2,6 +2,7 @@ package com.saksham.sakshambharat.activities;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +23,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.saksham.sakshambharat.R;
-import com.saksham.sakshambharat.fragments.ChatFragment;
 import com.saksham.sakshambharat.fragments.FeedFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_notification) {
             return true;
         } else if(id == R.id.action_chat) {
-            return true;
+            openChatActivity();
         }
 
         return super.onOptionsItemSelected(item);
@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_chat) {
-            openChatFragment();
-        } else if (id == R.id.nav_gallery) {
-
+            openChatActivity();
+        } else if (id == R.id.nav_feed) {
+            openFeedFragment();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
@@ -121,9 +121,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void openChatFragment(){
-        ChatFragment chatFragment = new ChatFragment();
-        updateFragment(chatFragment, 1);
+    private void openChatActivity(){
+        Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+        startActivity(intent);
     }
 
     private void openFeedFragment(){
