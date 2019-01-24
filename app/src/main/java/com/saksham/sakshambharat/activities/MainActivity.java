@@ -23,7 +23,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.saksham.sakshambharat.R;
+import com.saksham.sakshambharat.fragments.DetailsFragment;
 import com.saksham.sakshambharat.fragments.FeedFragment;
+import com.saksham.sakshambharat.fragments.NotificationsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_notification) {
-            return true;
+            openNotificationFragment();
         } else if(id == R.id.action_chat) {
             openChatActivity();
         }
@@ -106,8 +108,8 @@ public class MainActivity extends AppCompatActivity
             openChatActivity();
         } else if (id == R.id.nav_feed) {
             openFeedFragment();
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_about) {
+            openAboutActivity();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -129,6 +131,14 @@ public class MainActivity extends AppCompatActivity
     private void openFeedFragment(){
         FeedFragment feedFragment = new FeedFragment();
         updateFragment(feedFragment, 0);
+    }
+    private void openNotificationFragment(){
+        NotificationsFragment notificationsFragment = new NotificationsFragment();
+        updateFragment(notificationsFragment, 1);
+    }
+    private void openAboutActivity(){
+        DetailsFragment detailsFragment = new DetailsFragment();
+        updateFragment(detailsFragment, 1);
     }
 
     public void updateFragment(Fragment fragment, int bStack) {
