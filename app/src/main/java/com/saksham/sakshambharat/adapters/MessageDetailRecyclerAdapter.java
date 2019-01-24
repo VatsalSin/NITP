@@ -1,4 +1,4 @@
-package com.saksham.sakshambharat;
+package com.saksham.sakshambharat.adapters;
 
 public class MessageDetailRecyclerAdapter {
 }

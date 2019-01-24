@@ -8,8 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.saksham.sakshambharat.ChatItem;
-import com.saksham.sakshambharat.ChatRecyclerAdapter;
+import com.saksham.sakshambharat.model.ChatItem;
+import com.saksham.sakshambharat.adapters.ChatRecyclerAdapter;
 import com.saksham.sakshambharat.R;
 
 import java.util.ArrayList;
