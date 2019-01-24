@@ -1,8 +1,16 @@
 package com.saksham.sakshambharat.activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,16 +22,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.saksham.sakshambharat.R;
+import com.saksham.sakshambharat.fragments.ChatFragment;
+import com.saksham.sakshambharat.fragments.FeedFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final String TAG = getClass().getName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Saksham Bharat");
         setSupportActionBar(toolbar);
+
+        createNotificationChannel();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +58,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        openFeedFragment();
     }
 
     @Override
@@ -69,7 +87,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_notification) {
+            return true;
+        } else if(id == R.id.action_chat) {
             return true;
         }
 
@@ -82,8 +102,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
+        if (id == R.id.nav_chat) {
+            openChatFragment();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -99,5 +119,54 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openChatFragment(){
+        ChatFragment chatFragment = new ChatFragment();
+        updateFragment(chatFragment, 1);
+    }
+
+    private void openFeedFragment(){
+        FeedFragment feedFragment = new FeedFragment();
+        updateFragment(feedFragment, 0);
+    }
+
+    public void updateFragment(Fragment fragment, int bStack) {
+        Log.d(TAG, "updateFragment: " + fragment.toString());
+        Bundle bundle = fragment.getArguments();
+        if (bundle == null) {
+            bundle = new Bundle();
+        }
+        fragment.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frame_layout_main, fragment, fragment.getTag());
+
+        if (bStack ==1) {
+            transaction.addToBackStack(fragment.getTag());
+        } else if (bStack == 0){
+            manager.popBackStack();
+            transaction.disallowAddToBackStack();
+        }
+        transaction.commit();
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "FCM channel";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel(getString(R.string.default_notification_channel_id), name, importance);
+            channel.enableLights(true);
+            channel.setLightColor(Color.BLUE);
+
+            channel.enableVibration(true);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
