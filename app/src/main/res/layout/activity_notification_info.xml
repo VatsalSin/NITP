@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.NotificationInfoActivity"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/image"
+        tools:src="@mipmap/ic_launcher"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeight"
+        android:elevation="16dp"
+        app:cardBackgroundColor="#2196F3"
+        android:padding="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        app:cardCornerRadius="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/header"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Header"
+                android:padding="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timestamp"
+                tools:text="22-10-2019"
+                android:layout_alignParentBottom="true"
+                android:padding="8dp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/long_details"
+        android:padding="16sp"
+        tools:text="daskjhasdjasidhsaidjaskdjaslidjasdijasdijasdiadnifnasijdasidniasncdiandioajsdioajdniasaniasjdiasjdioajfiahfasfhasfhasifjasifnasifaisfjasifjsaifjioasjfaiosjfioasjjdjfisajdil"
+        android:textSize="18sp"/>
+
+</LinearLayout>
