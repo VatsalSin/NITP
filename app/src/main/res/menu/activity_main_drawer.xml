@@ -8,19 +8,34 @@
         <item
             android:id="@+id/nav_feed"
             android:icon="@drawable/baseline_rss_feed_24"
-            android:title="Feed" />
+            android:title="Feed"/>
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="About" />
+            android:title="About"/>
+        <item
+            android:id="@+id/nav_cur_scheme"
+            android:title="Current Schemes"/>
+        <item
+            android:id="@+id/nav_prop_scheme"
+            android:title="Proposed Schemes"/>
+        <item
+            android:id="@+id/nav_tutorials"
+            android:title="Tutorials"/>
+        <item
+            android:id="@+id/nav_case_study"
+            android:title="Case Study"/>
+        <item
+            android:id="@+id/nav_rural_ent"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Rural Entrepreneurship"/>
         <item
             android:id="@+id/nav_chat"
             android:icon="@drawable/baseline_chat_bubble_outline_24"
-            android:title="Chat" />
+            android:title="Chat"/>
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_profile"
+            android:title="Login/Profile"/>
     </group>
 
     <item android:title="Communicate">

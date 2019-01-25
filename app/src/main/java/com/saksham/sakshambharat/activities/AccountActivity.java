@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.saksham.sakshambharat.R;
+import com.saksham.sakshambharat.fragments.ProfileFragment;
 import com.saksham.sakshambharat.fragments.SignupFragment;
 
 public class AccountActivity extends AppCompatActivity {
@@ -18,9 +19,9 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        updateFragment(new SignupFragment(), 0);
+        updateFragment(new ProfileFragment(), 0);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_24);
     }

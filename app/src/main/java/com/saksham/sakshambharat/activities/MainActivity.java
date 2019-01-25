@@ -4,8 +4,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -93,8 +95,9 @@ public class MainActivity extends AppCompatActivity
             openNotificationFragment();
         } else if(id == R.id.action_chat) {
             openChatActivity();
-        } else if(id == R.id.action_account);
+        } else if(id == R.id.action_account) {
             openAccountActivity();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -111,12 +114,18 @@ public class MainActivity extends AppCompatActivity
             openFeedFragment();
         } else if (id == R.id.nav_about) {
             openAboutActivity();
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_rural_ent) {
+            openRuralEntr();
+        } else if (id == R.id.nav_case_study) {
+            openCaseStudy();
+        } else if (id == R.id.nav_cur_scheme) {
+            openCurrSchemes();
+        } else if (id == R.id.nav_prop_scheme) {
+            openPropSchemes();
+        } else if (id == R.id.nav_tutorials) {
+            openTutorials();
+        } else if (id == R.id.nav_profile) {
+            openAccountActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -144,6 +153,24 @@ public class MainActivity extends AppCompatActivity
     private void openAccountActivity(){
         Intent intent = new Intent(MainActivity.this, AccountActivity.class);
         startActivity(intent);
+    }
+    private void openRuralEntr(){
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        builder.setToolbarColor(getResources().getColor(R.color.colorPrimary));
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.launchUrl(this, Uri.parse(""));
+    }
+    private void openCaseStudy(){
+
+    }
+    private void openCurrSchemes(){
+
+    }
+    private void openPropSchemes(){
+
+    }
+    private void openTutorials(){
+
     }
 
     public void updateFragment(Fragment fragment, int bStack) {
