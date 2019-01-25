@@ -25,9 +25,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.saksham.sakshambharat.R;
+import com.saksham.sakshambharat.fragments.CurrentSchemesFragment;
 import com.saksham.sakshambharat.fragments.DetailsFragment;
 import com.saksham.sakshambharat.fragments.FeedFragment;
 import com.saksham.sakshambharat.fragments.NotificationsFragment;
+import com.saksham.sakshambharat.fragments.ProposedSchemesFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -139,16 +141,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void openFeedFragment(){
-        FeedFragment feedFragment = new FeedFragment();
-        updateFragment(feedFragment, 0);
+        updateFragment(new FeedFragment(), 0);
     }
     private void openNotificationFragment(){
-        NotificationsFragment notificationsFragment = new NotificationsFragment();
-        updateFragment(notificationsFragment, 1);
+        updateFragment(new NotificationsFragment(), 1);
     }
     private void openAboutActivity(){
-        DetailsFragment detailsFragment = new DetailsFragment();
-        updateFragment(detailsFragment, 1);
+        updateFragment(new DetailsFragment(), 1);
     }
     private void openAccountActivity(){
         Intent intent = new Intent(MainActivity.this, AccountActivity.class);
@@ -161,13 +160,13 @@ public class MainActivity extends AppCompatActivity
         customTabsIntent.launchUrl(this, Uri.parse(""));
     }
     private void openCaseStudy(){
-
+        
     }
     private void openCurrSchemes(){
-
+        updateFragment(new CurrentSchemesFragment(), 1);
     }
     private void openPropSchemes(){
-
+        updateFragment(new ProposedSchemesFragment(), 1);
     }
     private void openTutorials(){
 

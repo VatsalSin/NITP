@@ -29,7 +29,7 @@
                 android:paddingRight="5sp"
                 android:id="@+id/scheme_head"
                 android:textAlignment="viewEnd"
-                android:textStyle="bold||italic"
+                android:textStyle="bold|italic"
                 android:maxLines="2"
                 android:background="@drawable/scheme_back"
                 tools:text="Heading displayed "/>
