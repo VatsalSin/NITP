@@ -1,6 +1,5 @@
 package com.saksham.sakshambharat.fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,14 +16,10 @@ import com.saksham.sakshambharat.model.Notifications;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class NotificationsFragment extends Fragment {
     RecyclerView recyclerView;
 
     public NotificationsFragment() {
-        // Required empty public constructor
     }
 
 

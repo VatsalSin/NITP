@@ -190,7 +190,7 @@ public class SignupFragment extends Fragment {
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 16) {
-            passwordText.setError("between 4 and 10 alphanumeric characters");
+            passwordText.setError("between 4 and 16 alphanumeric characters");
             valid = false;
         } else {
             passwordText.setError(null);
@@ -215,6 +215,7 @@ public class SignupFragment extends Fragment {
     }
 
     private boolean checkUsername(String username){
+        //TODO: implement unique userid search
         return true;
     }
 
