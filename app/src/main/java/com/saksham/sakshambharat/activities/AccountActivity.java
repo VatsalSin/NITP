@@ -25,7 +25,7 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_24);
     }
 
-    public void updateFragment(Fragment fragment, int bStack) {
+    private void updateFragment(Fragment fragment, int bStack) {
         Log.d(TAG, "updateFragment: " + fragment.toString());
         Bundle bundle = fragment.getArguments();
         if (bundle == null) {
