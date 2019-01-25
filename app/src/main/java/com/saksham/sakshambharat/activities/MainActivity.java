@@ -93,7 +93,8 @@ public class MainActivity extends AppCompatActivity
             openNotificationFragment();
         } else if(id == R.id.action_chat) {
             openChatActivity();
-        }
+        } else if(id == R.id.action_account);
+            openAccountActivity();
 
         return super.onOptionsItemSelected(item);
     }
@@ -139,6 +140,10 @@ public class MainActivity extends AppCompatActivity
     private void openAboutActivity(){
         DetailsFragment detailsFragment = new DetailsFragment();
         updateFragment(detailsFragment, 1);
+    }
+    private void openAccountActivity(){
+        Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+        startActivity(intent);
     }
 
     public void updateFragment(Fragment fragment, int bStack) {

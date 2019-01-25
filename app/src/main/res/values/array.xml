@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="category_spinner">
+        <item>Select a category</item>
+        <item>Government Official</item>
+        <item>Aspirant</item>
+        <item>Investor</item>
+    </string-array>
+</resources>
