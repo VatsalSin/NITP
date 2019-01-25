@@ -93,7 +93,7 @@ public class SignupFragment extends Fragment {
         loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                updateFragment(new LoginFragment(), 0);
             }
         });
 
@@ -101,12 +101,13 @@ public class SignupFragment extends Fragment {
         return rootView;
     }
 
-    public void updateFragment(Fragment fragment, int bStack) {
+    private void updateFragment(Fragment fragment, int bStack) {
 
         FragmentManager manager = getActivity().getSupportFragmentManager();
 
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.frame_layout_account, fragment, fragment.getTag());
+        transaction.setCustomAnimations(R.anim.right_in, R.anim.right_out, R.anim.right_in, R.anim.right_out)
+                .replace(R.id.frame_layout_account, fragment, fragment.getTag());
 
         if (bStack ==1) {
             transaction.addToBackStack(fragment.getTag());

@@ -3,6 +3,8 @@ package com.saksham.sakshambharat.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,11 +43,28 @@ public class LoginFragment extends Fragment {
         inflate.findViewById(R.id.signup_log).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginFragment.this.getContext(), "Signup button pressed in Login page", Toast.LENGTH_SHORT).show();
+                updateFragment(new SignupFragment(), 0);
             }
         });
         return inflate;
 
+    }
+
+    private void updateFragment(Fragment fragment, int bStack) {
+
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.setCustomAnimations(R.anim.right_in, R.anim.right_out, R.anim.right_in, R.anim.right_out)
+                .replace(R.id.frame_layout_account, fragment, fragment.getTag());
+
+        if (bStack ==1) {
+            transaction.addToBackStack(fragment.getTag());
+        } else if (bStack == 0){
+            manager.popBackStack();
+            transaction.disallowAddToBackStack();
+        }
+        transaction.commit();
     }
 
 }
