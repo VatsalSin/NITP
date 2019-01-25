@@ -38,6 +38,12 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        inflate.findViewById(R.id.signup_log).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginFragment.this.getContext(), "Signup button pressed in Login page", Toast.LENGTH_SHORT).show();
+            }
+        });
         return inflate;
 
     }

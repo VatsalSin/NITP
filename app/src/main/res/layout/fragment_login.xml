@@ -88,5 +88,29 @@
         android:text="Forgot Password"
         android:id="@+id/forgo"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgo"
+        android:text="OR"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/or"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:layout_below="@id/or"
+        android:layout_marginTop="20dp"
+        android:textSize="28dp"
+        android:textColor="@color/white"
+        android:layout_marginRight="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/signup_log"/>
 
 </RelativeLayout>
