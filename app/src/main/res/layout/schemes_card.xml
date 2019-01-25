@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/tapped_rectangle_corner"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="?android:listPreferredItemHeightLarge"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="18dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:paddingTop="40sp"
+                android:paddingRight="5sp"
+                android:id="@+id/scheme_head"
+                android:textAlignment="viewEnd"
+                android:textStyle="bold||italic"
+                android:maxLines="2"
+                android:background="@drawable/scheme_back"
+                tools:text="Heading displayed "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="7"
+                android:padding="3dp"
+                android:id="@+id/scheme_details"
+                android:textColor="@color/orange"
+                tools:text="This free online tool converts your JPG images to PNG format, applying proper compression methods. Unlike other services, this tool does not ask for your email address, offers mass conversion and allows files up to 50 MB."
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+
+</RelativeLayout>
