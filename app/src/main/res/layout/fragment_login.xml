@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LoginFragment"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Saksham Bharat"
+        android:textColor="@color/white"
+        android:textSize="36dp"
+        android:textAlignment="center"
+        android:id="@+id/head"
+        android:layout_marginTop="20sp"/>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/emailInputLayout"
+        android:layout_below="@id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColorHint="#FBFBFB"
+
+        android:hint="Email">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/emailInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailInputLayout"
+        android:layout_marginLeft="16dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:textColorHint="#FBFBFB"
+        android:hint="Password"
+        app:passwordToggleEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/passwordInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+
+            android:maxLines="1"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordInputLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#EE6705"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:text="LOG IN"
+        android:id="@+id/log_butt"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/log_butt"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:text="Forgot Password"
+        android:id="@+id/forgo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgo"
+        android:text="OR"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/or"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:layout_below="@id/or"
+        android:layout_marginTop="20dp"
+        android:textSize="28dp"
+        android:textColor="@color/white"
+        android:layout_marginRight="40dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/signup_log"/>
+
+</RelativeLayout>
